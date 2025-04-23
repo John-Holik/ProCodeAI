@@ -26,9 +26,7 @@ export default function ChatBox() {
     setInput('');
 
     try {
-      const res = await axios.post('http://localhost:8000/chat', {
-        message: input
-      });
+      const res = await axios.post('http://localhost:8000/chat', { messages });
 
       const aiMessage = { role: 'assistant', content: res.data.reply };
       setMessages([...updatedMessages, aiMessage]);
