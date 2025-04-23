@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ThemeProvider } from './components/ThemeContext';
 import ChatBox from './components/ChatBox';
 import SettingsModal from './components/SettingsModule';
+import { Settings } from 'lucide-react';
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
@@ -26,8 +27,9 @@ function App() {
               onClick={() => setShowSettings(true)}
               className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-vscode-panel hover:bg-[#3a3a3a] text-vscode-text rounded-full shadow transition"
               aria-label="Open settings"
+              title="Settings"
             >
-              ⚙️
+              <Settings className="w-5 h-5" />
             </button>
 
             <ChatBox />

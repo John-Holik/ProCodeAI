@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState('dark');
   const [fontSize, setFontSize] = useState('medium');
-  const [bubbleColor, setBubbleColor] = useState('#007acc');
+  const [bubbleColor, setBubbleColor] = useState('#059669'); {/* Emerald-600 */}
 
   useEffect(() => {
   document.documentElement.classList.remove('light', 'dark');

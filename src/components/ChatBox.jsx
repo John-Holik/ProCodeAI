@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import Message from './Message';
 import axios from 'axios';
 import { useTheme } from './ThemeContext';
+import { Send } from 'lucide-react';
 
 export default function ChatBox() {
   const [messages, setMessages] = useState([]);
@@ -56,7 +57,7 @@ export default function ChatBox() {
 
       <div className="mt-4 flex gap-2">
         <input
-            className="flex-1 border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white dark:bg-vscode-panel text-black dark:text-vscode-text placeholder-gray-500 dark:placeholder-gray-400"
+            className="flex-1 border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white dark:bg-vscode-panel text-black dark:text-vscode-text placeholder-gray-500 dark:placeholder-gray-400"
             type="text"
             placeholder="Ask your programming tutor..."
             value={input}
@@ -64,11 +65,14 @@ export default function ChatBox() {
             onKeyDown={handleKeyDown}
         />
 
+        {/* Send Message Button */}
         <button
-            onClick={sendMessage}
-            className="px-5 py-2 rounded-md bg-blue-600 hover:bg-blue-700 dark:bg-vscode-accent dark:hover:bg-blue-500 text-white transition duration-200 shadow-sm"
-            >
-            ➤ Send
+          onClick={sendMessage}
+          className="w-10 h-10 flex items-center justify-center bg-gray-300 dark:bg-[#444] hover:bg-gray-400 dark:hover:bg-[#555] text-gray-800 dark:text-gray-200 rounded-full transition"
+          aria-label="Send message"
+          title="Send message"
+        >
+          <Send className="w-5 h-5 text-emerald-600" />
         </button>
 
       </div>
